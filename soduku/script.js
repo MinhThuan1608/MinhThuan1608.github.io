@@ -10,15 +10,13 @@ table[7] = []
 table[8] = []
 
 function input() {
-    let count=0;
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
-            document.getElementsByTagName("td")[count++].style.color="red"
             let value = document.getElementsByClassName("o" + (j + 1))[i].value
             if (value == "") table[i][j] = 0
             else {
                 table[i][j] = parseInt(value)
-                document.getElementsByClassName("o" + (j + 1))[i].style.color = "black"
+                document.getElementsByClassName("o" + (j + 1))[i].style.color = "red"
             }
         }
     }
