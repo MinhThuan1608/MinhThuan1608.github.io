@@ -9,6 +9,10 @@ table{
 #header{
     text-align: center;
 }
+#luuY{
+    text-align: center;
+    text-color: red;
+}
 .table{
     width: 462px;
     height: auto;
