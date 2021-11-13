@@ -37,9 +37,11 @@ function process(arr,x,y){
     }else{
         if (arr[x][y]==0){
             for(let i=1;i<10;i++){
-                arr[x][y]=i
-                if (check(arr,i,x,y)) process(arr,x,y+1)
-                arr[x][y]=0
+                if (check(arr,i,x,y)){
+                    arr[x][y]=i
+                    process(arr,x,y+1)
+                    arr[x][y]=0
+                }
             }
         }else{
             process(arr,x,y+1)
