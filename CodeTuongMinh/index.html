@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
     <h1>I love you, Tường Vy!</h1>
+    <br>
+    <label for="passInput">Nhập "Tường Vy hứa sẽ không bao giờ cãi lời Minh Thuận" để mở bản Premium:</label><br>
+    <input type="text" name="passInput" id="passInput" width="500px">
+    <button id="submitButton">Xác nhận</button>
+    
+    <script>
+        // Chặn chuột phải
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+    
+        // Chặn bôi đen văn bản
+        document.addEventListener("selectstart", function (e) {
+            e.preventDefault();
+        });
+    
+        // Chặn copy (Ctrl+C hoặc click chuột phải -> Copy)
+        document.addEventListener("copy", function (e) {
+            e.preventDefault();
+            alert("Copy con khỉiiii, tự gõ cho anhhhhhh, hựmmmm");
+        });
+    
+        // Chặn cut (Ctrl+X)
+        document.addEventListener("cut", function (e) {
+            e.preventDefault();
+            alert("Để coi em lười kiểu gì =)))) tự gõ cho anhhhhhh, hựmmmm");
+        });
+    </script>
+
+    <script>
+        document.getElementById("submitButton").addEventListener("click", function () {
+            const userInput = document.getElementById("passInput").value;
+            const correctPass = "Tường Vy hứa sẽ không bao giờ cãi lời Minh Thuận";
+    
+            if (userInput === correctPass) {
+                Swal.fire({
+                    title: 'Ngoan quá chờiiiii',
+                    text: 'Yêu em nhiều lắm luôn á! moahhhhh',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    window.location.href = "https://bit.ly/yeutuongvynhieu"; // Chuyển hướng đến trang premium
+                });
+            } else {
+                Swal.fire({
+                    title: 'Lỗi!',
+                    text: 'Sai rồi bé oiiiii, có vậy cũng nhập sai =)))) em lì đúm hămmmm',
+                    icon: 'error',
+                    confirmButtonText: 'Thử lại'
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
